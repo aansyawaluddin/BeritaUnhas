@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F6F9"
+    tools:context=".fragment.ValidasiFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/verifikasi" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diproses Panitia"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="95dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mohon Tunggu 24 Jam Tim akan \nmemproses berita kamu, jika belum \nada konfirmasi seilahkan melakukan\npengaduan di fitur pengaduan"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btn_beranda"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:text="Beranda"
+            android:background="@drawable/button"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="25dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
