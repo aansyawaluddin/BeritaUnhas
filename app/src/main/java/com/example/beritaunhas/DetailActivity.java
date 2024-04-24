@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +24,10 @@ public class DetailActivity extends AppCompatActivity {
         TextView TV_Waktu =findViewById(R.id.TV_WaktuDetail);
         TextView TV_Judul = findViewById(R.id.TV_JudulDetail);
         TextView TV_Detail = findViewById(R.id.TV_IsiDetail);
+
+        ImageView backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(v ->
+                onBackPressed());
 
         Intent intent = getIntent();
         Berita berita = intent.getParcelableExtra("berita");

@@ -29,18 +29,6 @@ public class Berita implements Parcelable {
         fotoBerita = in.readInt();
     }
 
-    public static final Creator<Berita> CREATOR = new Creator<Berita>() {
-        @Override
-        public Berita createFromParcel(Parcel in) {
-            return new Berita(in);
-        }
-
-        @Override
-        public Berita[] newArray(int size) {
-            return new Berita[size];
-        }
-    };
-
     public String getJudul() {
         return judul;
     }
@@ -86,6 +74,18 @@ public class Berita implements Parcelable {
         return 0;
     }
 
+    public static final Creator<Berita> CREATOR = new Creator<Berita>() {
+        @Override
+        public Berita createFromParcel(Parcel in) {
+            return new Berita(in);
+        }
+
+        @Override
+        public Berita[] newArray(int size) {
+            return new Berita[size];
+        }
+    };
+
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(judul);
@@ -94,6 +94,4 @@ public class Berita implements Parcelable {
         dest.writeString(namaUkm);
         dest.writeInt(fotoBerita);
     }
-
-
 }

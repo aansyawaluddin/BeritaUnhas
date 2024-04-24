@@ -28,6 +28,7 @@ public class TambahFragment extends Fragment {
         EditText et_nam = view.findViewById(R.id.et_nama);
         EditText et_nomor = view.findViewById(R.id.et_nomor);
         EditText et_judul = view.findViewById(R.id.et_judul);
+        EditText et_deskripsi = view.findViewById(R.id.et_deskripsi);
         Spinner spinnerJenisBerita = view.findViewById(R.id.spinnerJenisBerita);
 
         String[] jenisBeritaOptions = {"Lomba", "Beasiswa", "Fakultas", "Seminar", "Lain-lain"};
@@ -40,6 +41,7 @@ public class TambahFragment extends Fragment {
             String nama = et_nam.getText().toString().trim();
             String nomor = et_nomor.getText().toString().trim();
             String judul = et_judul.getText().toString().trim();
+            String deskripsi = et_deskripsi.getText().toString().trim();
             String jenisBerita = spinnerJenisBerita.getSelectedItem().toString();
 
             if (nama.isEmpty() || nomor.isEmpty() || judul.isEmpty() || jenisBerita.isEmpty()) {
@@ -54,13 +56,15 @@ public class TambahFragment extends Fragment {
                     et_judul.setError("Judul tidak boleh kosong");
                 }
                 if (jenisBerita.isEmpty()) {
-                    // Jika jenis berita belum dipilih
                     TextView errorText = (TextView) spinnerJenisBerita.getSelectedView();
                     errorText.setError("Pilih jenis berita");
-                    errorText.setTextColor(Color.RED); // Opsional: Ubah warna teks menjadi merah
+                    errorText.setTextColor(Color.RED);
+                }
+                if (deskripsi.isEmpty()){
+                    et_deskripsi.setError("Deskripsi tidak boleh kosong");
                 }
             } else {
-                // Semua field telah diisi, pindah ke fragment berikutnya
+
                 ValidasiFragment validasiFragment = new ValidasiFragment();
                 FragmentManager fragmentManager = getParentFragmentManager();
                 fragmentManager
